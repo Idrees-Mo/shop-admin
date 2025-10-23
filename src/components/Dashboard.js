@@ -1,5 +1,5 @@
-import React from "react";
 import { useAuth } from "../contexts/AuthContext";
+import ProductManager from "./products/ProductManager";
 
 const Dashboard = () => {
   const { user, logout } = useAuth();
@@ -35,6 +35,10 @@ const Dashboard = () => {
           </button>
         </div>
       </header>
+
+      <main>
+        <ProductManager />
+      </main>
     </div>
   );
 };
