@@ -6,7 +6,7 @@ import Login from "./components/auth/Login";
 function AppContent() {
   const { user } = useAuth();
 
-  return <div className="App">{user ? <Dashboard /> : <Login />}</div>;
+  return <div className="app">{user ? <Dashboard /> : <Login />}</div>;
 }
 
 function App() {

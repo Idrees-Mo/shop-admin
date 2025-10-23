@@ -3,7 +3,7 @@ import React from "react";
 import { useAuth } from "../contexts/AuthContext";
 
 const Dashboard = () => {
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
   return (
     <>
       <div>
@@ -15,7 +15,6 @@ const Dashboard = () => {
         <p>Email: {user?.email}</p>
         <p>Role: {user?.role}</p>
       </div>
-      <button onClick={logout}>Logout</button>
     </>
   );
 };

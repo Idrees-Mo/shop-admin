@@ -4,15 +4,13 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-  const login = async (email, password) => {
-    setLoading(true);
+  const loging = async (username, password) => {
     // Simulate an API call
     return new Promise((resolve) => {
       setTimeout(() => {
-        // Simulate successful login
-        setUser({ id: 1, name: "Admin User", email, role: "admin" });
+        setUser(username);
         setLoading(false);
         resolve();
       }, 1000);
@@ -23,7 +21,7 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
-  const value = { user, setUser, loading, login, logout };
+  const value = { user, setUser, loading, loging, logout };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

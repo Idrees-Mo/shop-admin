@@ -4,10 +4,9 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const login = async (email, password) => {
-    setLoading(true);
     // Simulate an API call
     return new Promise((resolve) => {
       setTimeout(() => {
